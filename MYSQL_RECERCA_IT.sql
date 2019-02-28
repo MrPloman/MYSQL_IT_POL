@@ -1,4 +1,4 @@
-Select * from flights1;
+Select COUNT(*) from flights1;
 
 Select Origin, AVG(DepDelay) AS Avg_DepDelay, AVG(ArrDelay) AS Avg_ArrDelay 
 From Flights1 
@@ -21,6 +21,7 @@ ORDER BY count(cancelled) desc;
 
 SELECT SUM(distance), tailnum
 FROM flights1 
+WHERE tailnum != "NA"
 GROUP BY tailnum
 ORDER BY sum(distance) desc
 LIMIT 10;
